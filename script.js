@@ -19,4 +19,18 @@ $(document).ready(function () {
   function close() {
     envelope.addClass("close").removeClass("open");
   }
+
+const playButton = document.getElementById('playButton');
+const audio = document.getElementById('audio');
+
+playButton.addEventListener('click', function() {
+    if (audio.paused) {
+        audio.play();
+        playButton.textContent = '❚❚'; // Change button to pause icon
+    } else {
+        audio.pause();
+        playButton.textContent = '▶'; // Change button back to play icon
+    }
+});
+  
 });
